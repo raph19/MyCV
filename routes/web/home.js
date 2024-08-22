@@ -3,7 +3,7 @@ var router = express.Router();              //the router of my app is stored on 
 
 
 
-router.get("/", function(req,res){
+router.get("https://raph19.github.io/MyCV/", function(req,res){
     res.render("client/build/index.html");
   });
 
