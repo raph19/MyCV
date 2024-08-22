@@ -1,22 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My CV</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none; /* Prevent text selection */
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none; /* For IE/Edge */
+  background: linear-gradient(180deg, #0e161cd6, #06171e) !important;    }
+    .cv-container {
+    background: #dbdbdb0a;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+}
+    .box {
+    position: relative;
+    top: -13%;
+}
+p#specialElement {
+  user-select: all;
+    position: absolute;
+    left: 10%;
+}
+.fa{
+  cursor:pointer;
+  padding-bottom: 12px;
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+}
+    .header, .sidebar, .main-content {
+      padding: 20px;
+    }
+    .header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .header h1 {
+      margin: 0;
+    }
+    .content {
+      display: flex;
+    }
+    .sidebar {
+      width: 20%;
+      background-color: #f9f9f903;
+      border-right: 2px solid #ddd;
+      color: white;
+      font-size: 17px;
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    }
+    .main-content {
+      width: 74%;
+    }
+    .degree-programming {
+      display: flex;
+      justify-content: space-between;
+    }
+    .degree-programming2 {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      top: -3%;
+
+    }
+    .cv-section {
+      margin-bottom: 20px;
+      z-index: 999999999999999;
+
+      width: 48%; /* Adjust width to fit side by side */
+    }
+    h3 {
+    font-size: 21px;
+    font-style: italic;
+    font-family: monospace;
+}
+.cv-section h2 {
+  color: #e5e5e5;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+    .cv-section h4 {
+      color: #e5e5e5;
+    }
+    .cv-section p,
+    .cv-section ul {
+      margin: 0;
+      padding: 0;
+    }
+    .cv-section ul {
+      list-style-type: none;
+    }
+    .cv-section ul li {
+      margin: 5px 0;
+    }
+    .ul2{
+      width:200%;
+    }
+    .main-content {
+    background: linear-gradient(180deg, #0d3f4fd6, #152b35) !important;    color: #e5e5e5;
+}
+h4{
+  font-size: 21px;
+}
+    .skill-bar {
+      background-color: #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      height: 9px;
+      margin-top: 5px;
+    }
+    .skill-bar div {
+      height: 100%;
+      background-color: #4caf50;
+    }
+    .profile-pic {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile-pic img {
+      border-radius: 50%;
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      margin-top: 20px; /* Adjust the margin as needed */
+      pointer-events: none; /* Prevent dragging */
+      -webkit-user-drag: none; /* Prevent dragging in webkit browsers */
+    }
+    .info {
+      margin-bottom: 20px;
+    }
+    .info p {
+      margin: 5px 0;
+    }
+    p3 {
+    FONT-SIZE: 18px;
+}
+p {
+    top: 5%;
+    position: relative;
+}
+div#se {
+    padding-bottom: 10px;
+}
+.cv-section_side{
+
+}
+  </style>
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script type="text/babel">
+    function CV() {
+      return (
+        <div className="cv-container">
+          <div className="header">
+            <h1>Raphael-Demetrios Tsirivakos</h1>
+            <p>Electrical and Computer Engineer</p>
+          </div>
+          <div className="content">
+            <div className="sidebar">
+              <div className="profile-pic">
+                <img src="./IMG_20220329_002822-02.jpeg" alt="Raphael-Demetrios Tsirivakos" />
+              </div>
+              <div className="cv-section">
+                <h4>Personal</h4>
+                <ul className="ul2">
+                  <div id="se"><p>&#128386;<p id="specialElement"> raphaeltsirivakos@gmail.com</p></p></div>
+                  <i class="fa fa-linkedin-square"> <a href="https://www.linkedin.com/in/raphael-demetrios-tsirivakos/" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    Raphael-Demetrios Tsirivakos</a></i> 
+                  <p>📍 Athens, Greece</p>
+                </ul>
+              </div>
+              <div className="cv-section_side">
+                <h4>Languages</h4>
+                <p>Greek (Native)</p>
+                <p>English</p>
+              </div>
+              <div className="cv-section_side">
+                <h4>Interests</h4>
+                <p>Music</p>
+                <p>Nature</p>
+                <p>Technology</p>
+              </div>
+            </div>
+            <div className="main-content">
+              <div className="degree-programming">
+                <div className="cv-section">
+                  <h2>Degree</h2>
+                  <p>Integrated Master’s Degree in Electrical and Computer Engineering (2024)
+                    Certified by the Technical University of Crete 🏛️</p>
+                </div>
+                <div className="cv-section">
+                  <h2>Programming</h2>
+                  <ul>
+                    <li>
+                      JavaScript
+                      <div className="skill-bar">
+                        <div style={{ width: '90%' }}></div>
+                      </div>
+                    </li>
+                    <li>
+                      JAVA
+                      <div className="skill-bar">
+                        <div style={{ width: '60%' }}></div>
+                      </div>
+                    </li>
+                    <li>
+                      C
+                      <div className="skill-bar">
+                        <div style={{ width: '60%' }}></div>
+                      </div>
+                    </li>
+                    <li>
+                      C#
+                      <div className="skill-bar">
+                        <div style={{ width: '60%' }}></div>
+                      </div>
+                    </li>
+                    <li>
+                      C++
+                      <div className="skill-bar">
+                        <div style={{ width: '60%' }}></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="degree-programming2">
+              <div className="cv-section">
+                <h2>Experience</h2>
+                <p3>2022 - Software Developer at AVShop</p3>
+                <p>During my time at AVShop, I had the opportunity to gain extensive experience with web technologies and enhance my skills in front-end development. I also explored technologies related to home automation systems.</p>
+              </div>
+              <div className="cv-section">
+                <h2>Projects</h2>
+                 <h3>Computation Theory</h3>
+                <a href="https://github.com/raph19/computation_theory-transpiler" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                 Transpiler 🌐 (ENG)</a>
+                   <h3>Computer Organization</h3>
+                <a href="https://github.com/raph19/CPU--Single_threaded-Multi_threaded-Pipelined" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                 CPU 🌐 (GRE) </a> 
+                <h3>Data structures</h3>
+                <a href="https://github.com/raph19/Data_Structures--Linear-Hashing-and-Efficiency" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                 Linear Hashing 🌐 (ENG) </a></div>
+              </div>
+              <div class="box">
+              <div className="cv-section">
+                <h2>Thesis</h2>
+                <p3>
+                  <a href="https://tucgr-my.sharepoint.com/:b:/g/personal/rtsirivakos_tuc_gr/EZO0-wSKSvBFm6cfqSKNjcIBQdaf9P-f6eM5YgsNtCFIJA?e=AF1pUg" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    2024 - Participatory Design Web Application 🌐 (ENG)
+                  </a></p3>
+                <p>My academic thesis involved me in new technologies and strengthened my expertise in JavaScript on both front-end and back-end. I was responsible for this project's architecture and maintenance, which helped me gain expertise in managing the full life cycle of a web application, from initial planning and development to deployment. This project also provided me valuable exposure to academic research.</p> 
+              </div>
+              <div className="cv-section">
+                <h2>Certificates</h2>
+                <ul>
+                  <li>2024 - Electrical and Computer Engineering</li>
+                  <li>2009 - First Certificate of Cambridge</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      );
+    }
+
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(<CV />);
+    document.addEventListener('keydown', function(e) {
+      // F12
+    //  if (e.key === 'F12') {
+    //    e.preventDefault();
+     // }
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+      }
+    });
+    document.addEventListener('contextmenu', function(event) {
+            if (event.target.id === 'specialElement') {
+                // Allow right-click for the element with id 'specialElement'
+                return; // Do nothing, allowing default behavior
+            }
+            event.preventDefault(); // Prevent default context menu for all other elements
+        });
+  </script>
+</body>
 </html>
