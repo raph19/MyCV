@@ -9,6 +9,7 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
+/* Keep your existing CSS */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -95,7 +96,7 @@ p#specialElement {
 .cv-section {
     margin-bottom: 20px;
     z-index: 999999999999999;
-    width: 48%; /* Adjust width to fit side by side */
+    width: 48%;
 }
 
 h3 {
@@ -165,9 +166,9 @@ h4 {
     width: 130px;
     height: 130px;
     object-fit: cover;
-    margin-top: 20px; /* Adjust the margin as needed */
-    pointer-events: none; /* Prevent dragging */
-    -webkit-user-drag: none; /* Prevent dragging in webkit browsers */
+    margin-top: 20px;
+    pointer-events: none;
+    -webkit-user-drag: none;
 }
 
 .info {
@@ -196,18 +197,20 @@ div#se {
 }
 
 /* Media Queries for Mobile and Tablets */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .content {
         flex-direction: column;
+        padding: 10px;
     }
 
     .sidebar, .main-content {
         width: 100%;
-        padding: 10px;
+        padding: 10px 0;
     }
 
     .cv-section {
         width: 100%;
+        padding: 10px 0;
     }
 
     .degree-programming,
@@ -232,7 +235,39 @@ div#se {
     .fa {
         font-size: 16px;
     }
+
+    .header {
+        padding: 10px 0;
+    }
 }
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 24px;
+    }
+
+    h3, h4 {
+        font-size: 16px;
+    }
+
+    p3 {
+        font-size: 14px;
+    }
+
+    .profile-pic img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .content {
+        padding: 5px;
+    }
+
+    .cv-container {
+        padding: 10px;
+    }
+}
+
   </style>
 </head>
 <body>
