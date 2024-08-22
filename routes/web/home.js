@@ -4,7 +4,7 @@ var router = express.Router();              //the router of my app is stored on 
 
 
 router.get("/", function(req,res){
-    res.render("views/");
+    res.render("client/build/index.html");
   });
 
 
