@@ -404,10 +404,9 @@ div#se {
     const root = ReactDOM.createRoot(container);
     root.render(<CV />);
     document.addEventListener('keydown', function(e) {
-      // F12
-    //  if (e.key === 'F12') {
-    //    e.preventDefault();
-     // }
+     if (e.key === 'F12') {
+        e.preventDefault();
+      }
       if (e.ctrlKey && e.shiftKey && e.key === 'I') {
         e.preventDefault();
       }
