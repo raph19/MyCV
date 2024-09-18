@@ -23,6 +23,12 @@ body {
     -ms-user-select: none; /* For IE/Edge */
     background: linear-gradient(180deg, #0e161cd6, #06171e) !important;
 }
+    .emoji-wrapper {
+    display: inline-block;
+    font-size: 18px;
+    text-align: center;
+    text-align: center; 
+}
   .cv-section2 {
     position: absolute;
     left: 52%;
@@ -217,6 +223,11 @@ div#se {
         width: 110px;
         height: 120px;
     }
+    .emoji-wrapper {
+    transform: scaleX(3);
+        position: relative;
+        left: 5px;
+}
   .cv-section2 {
     position: relative;
     left: 0%;
@@ -275,7 +286,11 @@ div#se {
     .header h1 {
         font-size: 24px;
     }
-  
+   .emoji-wrapper {
+    transform: scaleX(3);
+        position: relative;
+        left: 5px;
+  }
       .profile-pic img {
         width: 110px;
         height: 120px;
@@ -327,7 +342,7 @@ div#se {
               <div className="cv-section">
                 <h4>Personal</h4>
                 <ul className="ul2">
-                  <div id="se">&#128386;<p id="specialElement">raphaeltsirivakos@gmail.com</p></div>
+                  <div id="se"><span class="emoji-wrapper">🖂</span><p id="specialElement">raphaeltsirivakos@gmail.com</p></div>
                   <i className="fa fa-linkedin-square"> <a href="https://www.linkedin.com/in/raphael-demetrios-tsirivakos/" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
                     Raphael-Demetrios Tsirivakos</a></i> 
                   <div>📍 Athens, Greece</div>
