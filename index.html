@@ -459,16 +459,7 @@ div#se {
      if (e.key === 'F12') {
         e.preventDefault();
       }
-      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-        e.preventDefault();
-      }
     });
-    document.addEventListener('contextmenu', function(event) {
-            if (event.target.id === 'specialElement' || event.target.id === 'specialElement2'  ) {
-                return; 
-            }
-            event.preventDefault(); 
-        });
   </script>
 </body>
 </html>
